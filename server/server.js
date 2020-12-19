@@ -2,35 +2,46 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 
+const { db } = require('./db');
 const app = express();
 
-// logging middleware
+// Logging middleware
 app.use(morgan('dev'));
 
-// body parsing middleware
+// Body parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// static middleware
+// Static middleware
 app.use(express.static(path.join(__dirname, '../public')));
 
-// routes
+// Routes
 app.use('/api', require('./api'));
 
-// send index.html as default
+// Send index.html as default
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// error handling middleware
+// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal server error');
 });
 
-// server port
+// Server port
 const PORT = process.env.PORT || 5000; // Heroku compatible
-app.listen(PORT, function () {
-  console.log(`Server listening on port ${PORT}`);
-});
+
+// Server
+const startServer = async () => {
+  try {
+    await db.sync();
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+startServer();
