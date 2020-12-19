@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const Test = require('./models/test');
 
+// Model Associations
+
 // Database
 const DATABASE = '';
 const db = new Sequelize(
@@ -9,7 +11,5 @@ const db = new Sequelize(
     logging: false,
   }
 );
-
-// Model Associations
 
 module.exports = { db, Test };
