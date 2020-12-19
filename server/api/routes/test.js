@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-// matches GET requests
+// Matches GET requests
 router.get('/', async (req, res, next) => {
   try {
   } catch (error) {
@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// matches POST requests
+// Matches POST requests
 router.post('/', async (req, res, next) => {
   try {
   } catch (error) {
@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-// matches PUT requests
+// Matches PUT requests
 router.put('/testId', async (req, res, next) => {
   try {
   } catch (error) {
@@ -27,7 +27,7 @@ router.put('/testId', async (req, res, next) => {
   }
 });
 
-// matches DELETE requests
+// Matches DELETE requests
 router.put('/testId', async (req, res, next) => {
   try {
   } catch (error) {
