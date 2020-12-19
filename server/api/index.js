@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 // routes
+router.use('/test', require('./routes/test'));
 
 // route error handling middleware
 router.use((req, res, next) => {
