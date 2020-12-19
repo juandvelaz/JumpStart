@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# build files
+bundle.js
+bundle.js.map
+
+# build artifacts
+public/bundle.js
+public/bundle.js.map
+
+# misc
+.DS_Store
