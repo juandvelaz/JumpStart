@@ -38,7 +38,8 @@ const startServer = async () => {
   try {
     await db.sync();
     app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT}`);
+      console.log(`Server listening on PORT ${PORT}:`);
+      console.log(`http://localhost:${PORT}/`);
     });
   } catch (error) {
     console.error(error);
