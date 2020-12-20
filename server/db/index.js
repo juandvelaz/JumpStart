@@ -1,7 +1,4 @@
 const Sequelize = require('sequelize');
-const Test = require('./models/test');
-
-// Model Associations
 
 // Database
 const DATABASE = '';
@@ -12,4 +9,4 @@ const db = new Sequelize(
   }
 );
 
-module.exports = { db, Test };
+module.exports = { db };
