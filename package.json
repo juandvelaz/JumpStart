@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/juandvelaz/JumpStart#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.12.11",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
