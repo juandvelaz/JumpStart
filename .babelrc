@@ -1,3 +1,10 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-env"]
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+      /*
+        'react': teaches Babel to transpile JSX.
+        'env': teaches Babel to transpile Javascript.
+      */
+    ]
 }
